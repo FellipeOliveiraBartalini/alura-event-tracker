@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Alura Event Tracker",
+  "name": "Alura Event Tracker",
   "icons": [
     {
       "src": "favicon.ico",
