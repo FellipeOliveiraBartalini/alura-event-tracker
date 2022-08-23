@@ -7,7 +7,7 @@ const eventosFiltradosState = selector({
         const filtro = get(filtroDeEventos);
         const todosOsEventos = get(listaDeEventosState);
 
-        const eventos = todosOsEventos.filter(evento => {
+        const eventosFiltradosPorData = todosOsEventos.filter(evento => {
             if (!filtro.data) {
               return true;
             } else {
@@ -15,7 +15,16 @@ const eventosFiltradosState = selector({
               return ehOMesmoDia;
             }
         })
-        return eventos;
+
+        const eventosFiltradosPorEstado = eventosFiltradosPorData.filter(evento => {
+            if (!filtro.estado) {
+              return true;
+            } else {
+              const eventosFiltrados = filtro.estado === evento.completo;
+              return eventosFiltrados;
+            }
+        })
+        return eventosFiltradosPorEstado;
     }
 });
 
